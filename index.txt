@@ -1,0 +1,1 @@
+postgres://zrfphcozxudntg:927444a82c199deb7a4ce722a25b54ad3b421f7b34ba49a875fc604eca418a76@ec2-54-82-205-3.compute-1.amazonaws.com:5432/d3bgqcqvsdgc88
