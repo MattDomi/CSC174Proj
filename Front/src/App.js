@@ -50,7 +50,7 @@ function App() {
           <label>Age: <input onChange={(e) => setAge(e.target.value)}
           value={age}></input>
           </label><br />
-          <button type="ENTER">Submit
+          <button type="submit">ENTER
           </button>
         </form>
         <br /><br />
