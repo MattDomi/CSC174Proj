@@ -5,6 +5,7 @@ const conn = require('conn');
 
 const port = process.env.PORT || 3000;
 
+ // INSERT statement function
 app.use(conn());
 app.use(express.json());
 app.post('/create', (req,res) => {
@@ -29,6 +30,7 @@ app.post('/create', (req,res) => {
   );
 });
 
+// SELECT statement function
 app.get("/Client", (req,res) => {
   pool.query("SELECT * FROM CLIENT", (err,result) => {
     if (err) {
@@ -42,3 +44,21 @@ app.get("/Client", (req,res) => {
 app.listen(port, () => {
   console.log('Server listening on the port ${port}');
 })
+
+
+// POSTGRES CREDENTIALS
+
+
+const Pool = require("pg").pool;
+
+const pool = new Pool({
+  host: "ec2-54-82-205-3.compute-1.amazonaws.com",
+  database: "d3bgqcqvsdgc88",
+  port: "5432",
+  user: "zrfphcozxudntg",
+  password: "927444a82c199deb7a4ce722a25b54ad3b421f7b34ba49a875fc604eca418a76"
+
+
+});
+
+module.exports = pool;
