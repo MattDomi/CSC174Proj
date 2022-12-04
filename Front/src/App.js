@@ -12,9 +12,9 @@ function App() {
   const [phone, setPhone] = useState("");
 
 
-  const handleSubmit = (e) => {
+  const enterForm = (e) => {
     try{
-      Axios.post("https://proj174.herokuapp.com/insert", {
+      Axios.post("http://localhost:3000/insert", {
         clientInfo: clientInfo,
         acc_no: acc_no,
         age: age,
@@ -27,20 +27,17 @@ function App() {
       console.error(err.message);
     }
   };
-
   useEffect(() => {
-    Axios.get("https://proj174.herokuapp.com/select").then((response) => {
+    Axios.get("http://localhost:3000/select").then((response) => {
       setClient(response.data.rows);
-      console.log(response.data.rows);
-    }
-  )}, []);
+      console.log(response.data.rows);})}, []);
 
   return (
     <div className="App">
       <header className="AppointmentBooker">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={'http://cdn.onlinewebfonts.com/svg/img_19487.png'} className="App-logo" alt="logo" />
         <p>Please enter the following: </p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={enterForm}>
           <label>First name: <input onChange={(e) => setFirst(e.target.value)}
           value={c_first}></input>
           </label><br />
@@ -53,19 +50,11 @@ function App() {
           <label>Age: <input onChange={(e) => setAge(e.target.value)}
           value={age}></input>
           </label><br />
-          <button type="submit">Submit
+          <button type="ENTER">Submit
           </button>
         </form>
         <br /><br />
         <table>
-        <thead>
-          <tr>
-            <th>First</th>
-            <th>Last</th>
-            <th>Phone</th>
-            <th>Age</th>
-          </tr>
-        </thead>
         <tbody>
           {clientInfo.map((val, key) => (
             <tr key={key}>
