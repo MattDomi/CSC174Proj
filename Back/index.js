@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const pool = require('./db');
-const conn = require('conn');
+const cors = require('cors');
 
 const port = process.env.PORT || 3000;
 
  // INSERT statement function
-app.use(conn());
+app.use(cors());
 app.use(express.json());
 app.post('/insert', (req,res) => {
   const acc_no = req.body.acc_no;
