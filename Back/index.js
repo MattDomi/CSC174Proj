@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
  // INSERT statement function
 app.use(conn());
 app.use(express.json());
-app.post('/create', (req,res) => {
+app.post('/insert', (req,res) => {
   const acc_no = req.body.acc_no;
   const age = req.body.age;
   const c_first = req.body.c_first;
@@ -31,7 +31,7 @@ app.post('/create', (req,res) => {
 });
 
 // SELECT statement function
-app.get("/Client", (req,res) => {
+app.get("/select", (req,res) => {
   pool.query("SELECT * FROM CLIENT", (err,result) => {
     if (err) {
       console.log(err);

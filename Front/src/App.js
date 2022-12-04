@@ -4,6 +4,13 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios"
 
 function App() {
+  const [clientInfo, setClient] - useState([]);
+  const [acc_no, setAcc_no] = useState("");
+  const [age, setAge] = useState("");
+  const [c_first, setFirst] = useState("");
+  const [c_last, setLast] = useState("");
+  const [phone, setPhone] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
