@@ -1,0 +1,1 @@
+SQL statements are in CSC174>index.js
